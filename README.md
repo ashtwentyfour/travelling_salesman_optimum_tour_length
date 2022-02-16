@@ -24,7 +24,3 @@ mvn package
 ```
 java -cp target/tsp-1.0-SNAPSHOT.jar com.ashtwentyfour.algos.Driver
 ```
-
-
-
-

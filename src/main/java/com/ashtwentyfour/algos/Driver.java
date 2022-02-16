@@ -2,7 +2,6 @@ package com.ashtwentyfour.algos;
 
 public class Driver {
 	
-	
 	public static void main(String args[]) {
 		
        /* test graph below in adjacency matrix format with 4 'cities' */
@@ -29,13 +28,10 @@ public class Driver {
 	   /* declare a new object of class TSP*/
 	   TSP optimum_tour = new TSP();
 	   
-	   
 	   /* print out the optimum tour length for this graph (default starting point = 1) */
-	   optimum_tour.optimum_tour_length(4 , 4 , 1 , C);
-	
+	   Double opt_length = optimum_tour.optimum_tour_length(4 , 4 , 1 , C);
+	   System.out.println("Optimum Tour Length: " + opt_length + " units");
 	
 	}
 	   
-	   
-
 }

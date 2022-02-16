@@ -4,7 +4,6 @@ import java.security.InvalidParameterException;
 import java.util.HashSet;
 import java.util.Set;
 
-
 /**
  * 
  * 
@@ -15,9 +14,7 @@ import java.util.Set;
  *
  */
 
-
 public class TSP {
-	
 	
 	/**
 	 * 
@@ -30,9 +27,8 @@ public class TSP {
 	 * 
 	 */
 	
-	public void optimum_tour_length(int m , int n , int start , Double C[][]) {
-		
-		
+	public Double optimum_tour_length(int m , int n , int start , Double C[][]) {
+			
 		/* checking input parameters */
 		if(m <= 0 || n <= 0 || m != n)
 			throw new IllegalArgumentException("Incorrect matrix dimensions, m = n and m > 0, n > 0");
@@ -53,15 +49,9 @@ public class TSP {
 			S.add(i);
 		}
 		   
-	    System.out.println("Optimum Tour Length: ");
-	       
-	    System.out.println(tsp(start , C , S , start) + " units");
+	    return tsp(start , C , S , start);
 		
-	
 	}
-	
-	
-	
 	
 	/**
 	 * 
@@ -77,11 +67,8 @@ public class TSP {
 	
 	private Double tsp(int start , Double[][] C, Set<Integer> S2 , int I) {
  
-		
 		if(S2.size() == 0) {  
-		
-		  return C[I-1][start - 1];
-		
+			return C[I-1][start - 1];
 		}
 			
 		double d = 0;
@@ -97,9 +84,7 @@ public class TSP {
            d = C[I-1][j-1] + tsp(start, C, S1, j); 
 			
            if(d < min_dist) {  // select minimum/smallest distance 
-        	  
-			 min_dist = d;
-			 
+		       min_dist = d;
 		   }					
 		
 	    }
@@ -107,7 +92,5 @@ public class TSP {
 		return min_dist;  // return optimum length of tour
 		 
     }
-
-
 
 }
